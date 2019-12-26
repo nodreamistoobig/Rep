@@ -124,7 +124,7 @@ void TextFile::SortAscend(int col) {
 			}
 		}
 	}
-	ofstream out("output.txt");
+	ofstream out(this->path);
 	out << fileContent;
 
 
