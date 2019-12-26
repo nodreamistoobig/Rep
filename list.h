@@ -3,10 +3,10 @@ using namespace std;
 
 class LineListException {};
 
-class Data {   //ñ÷èòûâàíèå ñòğîêè ôàéëà
+class Data {   //Ã±Ã·Ã¨Ã²Ã»Ã¢Ã Ã­Ã¨Ã¥ Ã±Ã²Ã°Ã®ÃªÃ¨ Ã´Ã Ã©Ã«Ã 
 public:
 	string d[100];
-	int col;		//êîëè÷åñòâî ñòîëáöîâ
+	int col;		//ÃªÃ®Ã«Ã¨Ã·Ã¥Ã±Ã²Ã¢Ã® Ã±Ã²Ã®Ã«Ã¡Ã¶Ã®Ã¢
 	Data();
 	Data(int c);
 	friend istream& operator >>(istream& in, Data& dt);
@@ -22,7 +22,6 @@ istream& operator >>(istream& in, Data& dt) {
 ostream& operator <<(ostream& out, Data& dt){
 	for (int i = 0; i < dt.col; i++)
 		out << dt.d[i] << " ";
-	out << endl;
 	return out;
 }
 
