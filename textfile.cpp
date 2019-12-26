@@ -36,7 +36,7 @@ void TextFile::CopyFile(TextFile fileout) {
 	char str[200];
 	while (!in.eof()) {
 		in.getline(str, 200);
-		out << str;
+		out << str << endl;
 	}
 }
 
@@ -52,7 +52,7 @@ void TextFile::AddToFile(TextFile addfile) {
 	char str[200];
 	while (!in.eof()) {
 		in.getline(str, 200);
-		out << str;
+		out << str<<endl;
 	}
 	ifstream fin(addfile.path);
 	if (!fin.is_open())
@@ -100,10 +100,10 @@ void TextFile::SortAscend(int col) {
 		cout << "There are less columns in the file" << endl;
 		return;
 	}
-	Data dataOfFile(count);
 	LineList <Data> fileContent;
-	LineListElem<Data>* ptr = fileContent.getStart();
 	while (!in.eof()) {
+		Data dataOfFile(count);
+		LineListElem<Data>* ptr = fileContent.getStart();
 		in >> dataOfFile;
 		if (!fileContent.getStart())
 			fileContent.insertFirst(dataOfFile);
@@ -124,7 +124,7 @@ void TextFile::SortAscend(int col) {
 			}
 		}
 	}
-	ofstream out(this->path);
+	ofstream out("output.txt");
 	out << fileContent;
 
 
