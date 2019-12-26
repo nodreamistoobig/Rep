@@ -64,7 +64,7 @@ void TextFile::AddToFile(TextFile addfile) {
 		fin.getline(str, 200);
 		out << str;
 	}
-	buf.CopyFile(*this);
+	this->CopyFile(buf);
 }
 
 void TextFile::MakeUniq(TextFile file1, TextFile file2) {
